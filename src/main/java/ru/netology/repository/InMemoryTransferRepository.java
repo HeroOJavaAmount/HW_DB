@@ -62,12 +62,11 @@ public class InMemoryTransferRepository implements TransferRepository{
         return false;
     }
 
-    public boolean hasSufficientFunds(String cardNumber, BigDecimal required) {
+     public boolean hasSufficientFunds(String cardNumber, BigDecimal required) {
         Card card = cards.get(cardNumber);
-        if (card == null) {
-            throw new InvalidInputException("Карта не найдена: " + maskCard(cardNumber), ERROR_INVALID_CARD_DATA);
-        }
-        return card.isBalanceBigger(required);
+        if (card != null) {
+            return card.isBalanceBigger(required);
+        }else throw new InvalidInputException("Карта не найдена: " + maskCard(cardNumber), ERROR_INVALID_CARD_DATA);
     }
 
     public String saveOperation(TransferRequest request) {
