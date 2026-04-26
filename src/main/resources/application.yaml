@@ -1,0 +1,18 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: Money Transfer and Transactional Service (MTSS)
+  profiles:
+    active: postgres
+
+app:
+  logging:
+    file-path: logs/transfer.log
+  verification:
+    code-length: 4
+    default-code: "0000"
+  limits:
+    max-transfer-amount: 100000000
+    min-transfer-amount: 100

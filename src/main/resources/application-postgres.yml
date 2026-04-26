@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/money_transfer?tcpKeepAlive=true
+    username: appuser  # сам апюзер
+    password: secret
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      minimum-idle: 1
+      maximum-pool-size: 5
+      connection-test-query: SELECT 1
+      validation-timeout: 5000
+  sql:
+    init:
+      mode:  never # always
+      schema-locations: classpath:schema-postgresql.sql # не видит H2 ??
+
+logging:
+  level:
+    org.springframework.jdbc.core: DEBUG
+    ru.netology: DEBUG
+    com.zaxxer.hikari: DEBUG
