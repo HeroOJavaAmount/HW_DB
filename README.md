@@ -27,8 +27,7 @@ docker-compose -p elk -f docker-compose-elk.yml up -d
   'fontSize':'70px',
   'fontFamily':'Arial, sans-serif'
 }}}%%
-```
-```
+
 flowchart LR
     A[Пользователь] --> B[Демо-фронтенд<br/>React]
     B --> C[TransferController<br/>REST API]
