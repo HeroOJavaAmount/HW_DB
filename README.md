@@ -17,6 +17,8 @@ Kibana - не получается поднять так как падает Ela
 ### Запуск стека
 ```bash
 docker-compose -p elk -f docker-compose-elk.yml up -d
+```
+
 
 ```mermaid
 %%{init: {'theme':'base', 'themeVariables': {
